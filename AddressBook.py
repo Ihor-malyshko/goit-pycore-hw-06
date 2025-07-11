@@ -42,6 +42,12 @@ class Record:
                 self.phones[i] = Phone(new_phone)
                 return
         raise ValueError(f"Phone {old_phone} not found in record.")
+    def delete_phone(self, phone):
+        for p in self.phones:
+            if p.value == phone:
+                self.phones.remove(p)
+                return
+        raise ValueError(f"Phone {phone} not found in record.")
 
     def find_phone(self, phone):
         for p in self.phones:
